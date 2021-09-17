@@ -1,5 +1,5 @@
 from django.urls import path
-from Hero.views import IndexView, HeroListView, HeroDetailView
+from Hero.views import IndexView, HeroDetailView, HeroListView
 from django.contrib import admin
 
 urlpatterns = [
