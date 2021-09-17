@@ -15,4 +15,5 @@ class HeroDetailView(TemplateView):
         return {'hero': hero}
 
 class IndexView(TemplateView):
+    model = Hero
     template_name = 'index.html'
