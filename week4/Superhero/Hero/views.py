@@ -5,9 +5,12 @@ class HeroListView(ListView):
     model = Hero
     template_name = 'hero_list.html'
 
-class HeroListView(ListView):
+class HeroDetailView(TemplateView):
     model = Hero
-    template_name = 'hero_list.html'
+    template_name = 'hero_detail.html'
+
+    def get_context_data(self, **kwargs):
+        return {'hero': Hero.objects.get(pk=1)}
 
 class IndexView(TemplateView):
     template_name = 'index.html'
