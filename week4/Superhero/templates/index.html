@@ -9,6 +9,16 @@
 </head>
 <body>
     <h1>Superhero News</h1>
-    <a href="/admin/">Admin Views for Superhero</a>
+    
+    <ul>
+        {% for hero in object_list %}
+          <li>{{ hero.name }}</li>
+        {% endfor %}
+      </ul>
+
+    <main>
+        <p><a href="/hero/">List of Heros</a> </p>
+        <p><a href="/admin/">Admin Views for Superhero</a></p>
+    </main>
 </body>
 </html>
