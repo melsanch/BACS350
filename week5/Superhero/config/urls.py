@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hero.views import IndexView, HeroListView, HeroDetailView
 from django.contrib.admin import site
 
 urlpatterns = [
     path(r'admin/', site.urls),
     path('', IndexView.as_view()),
+    path('hero/', HeroListView.as_view()),
+    path('hero/<int:pk>', HeroDetailView.as_view()),
 ]
