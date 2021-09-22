@@ -1,26 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel ="stylesheet" href ="super.css">
+    <link rel ="stylesheet" href ="{% static 'super.css' %}">
 </head>
 <body>
-<ul>
-    {% for hero in object_list %}
-    <li>
-        <h2>{{ hero.name }}</h2>
-        <p>{{hero.description}}</p>
-        <p>
-            <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
-        </p>
-        <p>
-            <a href="{{ hero.pk }}">{{hero.name}}</a>
-        </p>
-    </li>
-    {% endfor %}
-</ul>
+    <header>
+        <h1>The Superhero Gallery</h1>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock content%}
+    </div>
 </body>
 </html>
