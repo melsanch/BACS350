@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <ul>
-        {% for hero in object_list %}
-        <li>
-            <h2><a href="{{ hero.pk }}">{{hero.name}}</a></h2>
-            <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
+    <div> 
+        {% extends 'superhero_theme.html'%}
+        {% block content %}
+        <ul>
+            {% for hero in object_list %}
+            <li>
+                <h2><a href="{{ hero.pk }}">{{hero.name}}</a></h2>
+                <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
+        
+        
+            </li>
+            {% endfor %}
+        </ul>
+        {% endblock content %}
+    </div>
     
-    
-        </li>
-        {% endfor %}
-    </ul>
 </body>
 </html>
