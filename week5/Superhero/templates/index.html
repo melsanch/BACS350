@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Superhero Index</h1>
-    <p><a href="/hero/">List of Heroes</a></p>
-    <p><a href="/admin/">Admin Views for Superhero</a></p>
+    <div>
+        {% extends 'superhero_theme.html'%}
+        {% block content %}
+        <h1>Superhero Index</h1>
+        <p><a href="/hero/">List of Heroes</a></p>
+        <p><a href="/admin/">Admin Views for Superhero</a></p>
+        {% endblock content %}
+    </div>
+   
 </body>
 </html>
