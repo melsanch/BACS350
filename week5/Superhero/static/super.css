@@ -1,9 +1,15 @@
 header h1 {
-    color: green;
-    background-color: yellow;
+    color: rgb(228, 238, 228);
+    background-color: rgb(55, 0, 255);
     padding: 20px;
     border: 5px solid black;
     border-radius: 2px 2px 5px black;
+    text-align: center;
+}
+header h2{
+    color: rgb(23, 0, 128);
+    padding: 20px;
+
     text-align: center;
 }
 
