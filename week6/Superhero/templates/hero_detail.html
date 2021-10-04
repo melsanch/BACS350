@@ -15,12 +15,23 @@
         {% extends 'superhero_theme.html'%}
 
         {% block content %}
-        <h2>Superhero Secret Identity</h2>
-        <h3>{{ hero.name }}</h3>
-        <p>{{hero.identity}}</p>
+        
+        <h2 style = "text-align: center;">{{ hero.name }}</h2>
         <p>
-            <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
+            <img src="{{hero.image}}"  alt="{{hero.name}]"  width="200">
+        
         </p>
+        <h3>Identity:</h3>
+        <p>{{hero.identity}}</p>
+        
+        <h3>Description:</h3>
+        <p>{{hero.description}}</p>
+
+        <h3>Strength:</h3>
+        <p>{{hero.strength}}</p>
+
+        <h3>Weakness</h3>
+        <p>{{hero.weakness}}</p>
         <p>
             <a href="/hero/">Show all heros</a>
         </p>

@@ -17,10 +17,14 @@
             <li>
                 <h2><a href="{{ hero.pk }}">{{hero.name}}</a></h2>
                 <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
-
+                <p>  </p>
+                <a href="{{ hero.pk }}/">Edit</a>
+                <a href="{{ hero.pk }}/delete">Delete</a>
 
             </li>
             {% endfor %}
+            <p>  </p>
+            <a href="/hero/add" class="btn btn-success m-5">Add New Hero</a>
         </ul>
         {% endblock content %}
     </div>

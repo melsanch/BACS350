@@ -1,4 +1,5 @@
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import RedirectView, CreateView, DetailView, ListView, TemplateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from .models import Superhero
 from django.shortcuts import render
 
@@ -22,3 +23,21 @@ class HeroDetailView(TemplateView):
         return {'hero': hero
                 
         }
+
+class HeroView(RedirectView):
+    url = '/hero/'
+
+class HeroAddView(CreateView):
+    template_name = "hero_add.html"
+    model = Superhero
+    fields = ['name', 'identity', 'description', 'strength', 'weakness','image']
+
+class HeroEditView(UpdateView):
+    template_name = "hero_edit.html"
+    model = Superhero
+    fields = ['identity', 'description', 'strength', 'weakness']
+
+class HeroDeleteView(DeleteView):
+    template_name = "hero_delete.html"
+    model = Superhero
+    success_url = reverse_lazy('hero_list')
