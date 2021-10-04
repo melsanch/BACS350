@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        {% extends 'superhero_theme.html'%}
+        {% block content %}
+        <ul>
+            {% for hero in object_list %}
+            <li>
+                <h2><a href="{{ hero.pk }}">{{hero.name}}</a></h2>
+                <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
+
+
+            </li>
+            {% endfor %}
+        </ul>
+        {% endblock content %}
+    </div>
+
+</body>
+
+</html>

@@ -9,12 +9,21 @@
 </head>
 
 <body>
+
     <div>
+
         {% extends 'superhero_theme.html'%}
+
         {% block content %}
-        <h1>Superhero Index</h1>
-        <p><a href="/hero/">List of Heroes</a></p>
-        <p><a href="/admin/">Admin Views for Superhero</a></p>
+        <h2>Superhero Secret Identity</h2>
+        <h3>{{ hero.name }}</h3>
+        <p>{{hero.identity}}</p>
+        <p>
+            <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
+        </p>
+        <p>
+            <a href="/hero/">Show all heros</a>
+        </p>
         {% endblock content %}
     </div>
 
