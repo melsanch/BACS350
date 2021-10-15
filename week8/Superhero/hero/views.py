@@ -2,6 +2,9 @@ from django.views.generic import RedirectView, CreateView, DetailView, ListView,
 from django.urls import reverse_lazy
 from .models import Superhero
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class IndexView(TemplateView):
     model = Superhero
@@ -27,17 +30,18 @@ class HeroDetailView(TemplateView):
 class HeroView(RedirectView):
     url = '/hero/'
 
-class HeroAddView(CreateView):
+class HeroAddView(LoginRequiredMixin,CreateView):
     template_name = "hero_add.html"
     model = Superhero
     fields = ['name', 'identity', 'description', 'strength', 'weakness','image']
 
-class HeroEditView(UpdateView):
+class HeroEditView(LoginRequiredMixin,UpdateView):
     template_name = "hero_edit.html"
     model = Superhero
     fields = ['identity', 'description', 'strength', 'weakness']
 
-class HeroDeleteView(DeleteView):
+class HeroDeleteView(LoginRequiredMixin,DeleteView):
     template_name = "hero_delete.html"
     model = Superhero
     success_url = reverse_lazy('hero_list')
+
