@@ -18,7 +18,7 @@ from hero.views import IndexView, HeroListView, HeroDetailView, HeroAddView, Her
 from django.urls import path
 from django.views.generic import RedirectView
 from django.urls.conf import include, include
-
+from django.contrib.auth import logout
 
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
         # Accounts
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
+    path('logout', logout, name='logout'),
     path('', IndexView.as_view()),
     path('hero/', HeroListView.as_view(), name = 'hero_list'),
     path('hero/<int:pk>', HeroDetailView.as_view(), name = 'hero_detail'),
