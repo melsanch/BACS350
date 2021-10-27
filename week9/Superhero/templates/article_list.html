@@ -17,7 +17,7 @@
 
         {% for article in object_list %}
         <tr>
-            <td>{{ article.book }}</td>
+            <td>{{ article.Hero }}</td>
             <td><a href="{{ article.pk }}">Article {{ article.order }} - {{ article.title }}</a></td>
             <td><a href="{{ article.pk }}/">Edit</a></td>
             <td><a href="{{ article.pk }}/delete">Delete</a></td>
