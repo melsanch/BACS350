@@ -21,6 +21,7 @@ from django.urls.conf import include, include
 from django.contrib.auth import logout
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
         # Accounts

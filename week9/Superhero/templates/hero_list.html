@@ -10,23 +10,38 @@
 
 <body>
     <div>
-        {% extends 'superhero_theme.html'%}
+        {% extends 'theme.html'%}
         {% block content %}
-        <ul>
-            {% for hero in object_list %}
-            <li>
-                <h2><a href="{{ hero.pk }}">{{hero.name}}</a></h2>
-                <img src="{{hero.image}}" alt="{{hero.name}]" width="200">
-                <p>  </p>
-                <a href="{{ hero.pk }}/">Edit</a>
-                <a href="{{ hero.pk }}/delete">Delete</a>
+        <div class="container-fluid m-5">
+            <h1 class="text-primary text-center">List of Heros</h1>
 
-            </li>
+            <table class="table table-hover">
+                <tr>
+                    <th>Hero</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                </tr>
+
+
+            {% for hero in object_list %}
+            <tr>
+                <td><a href="{{ hero.pk }}">{{hero.name}}</a></td>
+                <td><img src="{{hero.image}}" alt="{{hero.name}]" width="200"></td>
+                
+                <td><a href="{{ hero.pk }}/">Edit</a></td>
+                <td><a href="{{ hero.pk }}/delete">Delete</a></td>
+        
+            </tr>
             {% endfor %}
-            <p>  </p>
-            <a href="/hero/add" class="btn btn-success m-5">Add New Hero</a>
-        </ul>
+            </table>
+
+            <p>
+                 <a href="/hero/add" class="btn btn-success m-5">Add New Hero</a>
+            </p>
+            
         {% endblock content %}
+    </div>
+        
     </div>
 
 </body>
