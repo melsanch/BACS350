@@ -36,14 +36,14 @@ class ArticleDetailView(DetailView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     template_name = "article_add.html"
     model = Article
-    fields = ['title', 'order', 'document', 'markdown']
+    fields = ['title', 'order', 'markdown']
     success_url = reverse_lazy('article_list')
 
 
 class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "article_edit.html"
     model = Article
-    fields = ['title',  'order', 'document', 'markdown']
+    fields = ['title',  'order', 'markdown']
     success_url = reverse_lazy('article_list')
 
 
