@@ -27,6 +27,7 @@ urlpatterns = [
         # Accounts
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
+    path('', include('doc.urls')),
     
     path('logout', logout, name='logout'),
     path('', IndexView.as_view()),
