@@ -28,13 +28,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('doc.urls')),
+    path('', include('hero.urls')),
     
 
-    path('logout', logout, name='logout'),
-    path('', IndexView.as_view()),
-    path('hero/', HeroListView.as_view(), name = 'hero_list'),
-    path('hero/<int:pk>', HeroDetailView.as_view(), name = 'hero_detail'),
-    path('hero/add', HeroAddView.as_view(), name = 'hero_add'),
-    path('hero/<int:pk>/', HeroEditView.as_view(), name = 'hero_edit'),
-    path('hero/<int:pk>/delete', HeroDeleteView.as_view(), name = 'hero_delete'),
+
 ]
