@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+
+        {% extends 'superhero_theme.html'%}
+
+        {% block content %}
+        
+        <h2 style = "text-align: center;">{{ hero.name }}</h2>
+        <p>
+            <img src="{{hero.image}}"  alt="{{hero.name}]"  width="200">
+        
+        </p>
+        <h3>Identity:</h3>
+        <p>{{hero.identity}}</p>
+        
+        <h3>Description:</h3>
+        <p>{{hero.description}}</p>
+
+        <h3>Strength:</h3>
+        <p>{{hero.strength}}</p>
+
+        <h3>Weakness</h3>
+        <p>{{hero.weakness}}</p>
+
+        <h3>SHIELD NUMBER: {{hero.pk}}</h3>
+        <p> </p>
+        <a href="{{ hero.pk }}/">Edit</a>
+        <a href="{{ hero.pk }}/delete">Delete</a>
+        <p>
+            <a href="/hero/">Show all heros</a>
+        </p>
+        {% endblock content %}
+    </div>
+
+</body>
+
+</html>
